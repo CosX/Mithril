@@ -1,37 +1,44 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class DisplayIndicator : MonoBehaviour {
+namespace Assets.Scripts.HUD
+{
+    public class DisplayIndicator : MonoBehaviour {
 
-    public Texture backdrop;
-    public Texture indicator;
-    public Texture icon;
+        public Texture Backdrop;
+        public Texture Indicator;
+        public Texture Icon;
 
-    public int backdropWidth = 243;
-    public int backdropHeight = 46;
+        public float BackdropWidth = 243f;
+        public float BackdropHeight = 46f;
 
-    public int backdropMarginLeft = -5;
-    public int backdropMarginTop = -8;
+        public float BackdropMarginLeft = -5f;
+        public float BackdropMarginTop = -8f;
     
-    public int indicatorWidth = 133;
-    public int indicatorHeight = 10;
+        public float IndicatorWidth = 133f;
+        public float IndicatorHeight = 10f;
 
-    public int indicatorMarginLeft = 40;
-    public int indicatorMarginTop = 13;
+        public float IndicatorMarginLeft = 40f;
+        public float IndicatorMarginTop = 13f;
 
-    public int iconWidth = 6;
-    public int iconHeight = 43;
+        public float IconWidth = 6f;
+        public float IconHeight = 43f;
 
-    public int iconMarginLeft = 11;
-    public int iconMarginTop = -2;
+        public float IconMarginLeft = 11f;
+        public float IconMarginTop = -2f;
 
-    void OnGUI()
-    {
+        void OnGUI()
+        {
 
-        GUI.DrawTexture(new Rect(backdropMarginLeft, backdropMarginTop, backdropWidth, backdropHeight), backdrop, ScaleMode.ScaleToFit, true, 0);
+            GUI.DrawTexture(new Rect(BackdropMarginLeft, BackdropMarginTop, BackdropWidth, BackdropHeight), Backdrop, ScaleMode.ScaleToFit, true, 0);
 
-        GUI.DrawTexture(new Rect(indicatorMarginLeft, indicatorMarginTop, indicatorWidth, indicatorHeight), indicator, ScaleMode.ScaleAndCrop, true, 0);
+            GUI.DrawTexture(new Rect(IndicatorMarginLeft, IndicatorMarginTop, IndicatorWidth, IndicatorHeight), Indicator, ScaleMode.ScaleAndCrop, true, 0);
 
-        GUI.DrawTexture(new Rect(iconMarginLeft, iconMarginTop, iconWidth, iconHeight), icon, ScaleMode.ScaleToFit, true, 0);
+            GUI.DrawTexture(new Rect(IconMarginLeft, IconMarginTop, IconWidth, IconHeight), Icon, ScaleMode.ScaleToFit, true, 0);
+        }
+
+        public void AlterIndicatior(float value)
+        {
+            IndicatorWidth = IndicatorWidth * (value / 100);
+        }
     }
 }

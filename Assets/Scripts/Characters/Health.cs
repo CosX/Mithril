@@ -21,11 +21,16 @@ namespace Assets.Scripts.Characters
         {
             if (health <= 0f) {
                 if (!_dead)
+                {
                     PlayerDying();
-                Debug.Log ("Died!");
-            }else{
-                PlayerDead();
-                LevelReset();
+                    Debug.Log("Died!");
+                }
+                else
+                {
+                    PlayerDead();
+                    LevelReset();
+                }
+                
             }
         }
 
@@ -41,14 +46,22 @@ namespace Assets.Scripts.Characters
         }
 
         void LevelReset(){
-
+            Application.LoadLevel(Application.loadedLevelName);
 	
         }
 
         public void TakeDamage (float amount)
         {
-            health -= amount;
-            _healthIndicator.IndicatorWidth -= amount * _diff;
+            if (health - amount <= 0)
+            {
+                health = 0;
+                _healthIndicator.IndicatorWidth = 0;
+            }
+            else
+            {
+                health -= amount;
+                _healthIndicator.IndicatorWidth -= amount * _diff;
+            }
         }
     }
 }

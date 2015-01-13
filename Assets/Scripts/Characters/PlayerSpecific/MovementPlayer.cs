@@ -8,6 +8,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         public float MaxSpeed = 2f;
         bool _facingLeft = true;
         bool _grounded;
+        private const float GroundRadius = 0.1f;
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
         public float JumpForce = 700f;
@@ -15,7 +16,10 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         void Start () {
             _staminaObject = GameObject.Find("Player").GetComponent<Stamina>();
         }
-        void FixedUpdate () {
+        void FixedUpdate ()
+        {
+            _grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
+
             var move = Input.GetAxis ("Horizontal");
             rigidbody2D.velocity = new Vector3(move * MaxSpeed, rigidbody2D.velocity.y);
             if (move < 0 && !_facingLeft) {
@@ -23,9 +27,11 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             } else if (move > 0 && _facingLeft) {
                 Flip ();
             }
+            collider2D.isTrigger = !_grounded;
         }
 
-        void Update(){
+        void Update()
+        {
             //Må håndtere longpress hvis man vil hoppe lenger
             if (_grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
@@ -33,14 +39,9 @@ namespace Assets.Scripts.Characters.PlayerSpecific
                 _grounded = false;
                 _staminaObject.DrainStamina(25);
             }
-		
-		
         }
-        //Må mer logikk inn i denne. Noe basert på hva Collision er.
-        void OnCollisionEnter2D(Collision2D col)
-        {
-            _grounded = true;
-        }
+
+        //}
         //flip if needed
         void Flip(){
             _facingLeft = !_facingLeft;

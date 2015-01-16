@@ -12,6 +12,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
         public float JumpForce = 700f;
+        private float time;
 
         void Start () {
             _staminaObject = GameObject.Find("Player").GetComponent<Stamina>();
@@ -19,7 +20,6 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         void FixedUpdate ()
         {
             _grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
-
             var move = Input.GetAxis ("Horizontal");
             rigidbody2D.velocity = new Vector3(move * MaxSpeed, rigidbody2D.velocity.y);
             if (move < 0 && !_facingLeft) {
@@ -48,6 +48,16 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             var theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.collider.tag == "Enemy")
+            {
+                var vec2 = new Vector2(-50f, 5f);
+                rigidbody2D.AddForce(vec2, ForceMode2D.Impulse);
+            }
+
         }
     }
 }

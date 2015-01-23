@@ -6,13 +6,14 @@ namespace Assets.Scripts.Characters.PlayerSpecific
     {
         private Stamina _staminaObject;
         public float MaxSpeed = 2f;
-        bool _facingLeft = true;
-        bool _grounded;
-        private const float GroundRadius = 0.1f;
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
         public float JumpForce = 700f;
-        private float time;
+        
+        private const float GroundRadius = 0.1f;
+        private bool _facingLeft = true;
+        private bool _grounded;
+        private float _time;
 
         void Start () {
             _staminaObject = GameObject.Find("Player").GetComponent<Stamina>();
@@ -32,17 +33,24 @@ namespace Assets.Scripts.Characters.PlayerSpecific
 
         void Update()
         {
-            //Må håndtere longpress hvis man vil hoppe lenger
             if (_grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rigidbody2D.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
                 _grounded = false;
                 _staminaObject.DrainStamina(25);
             }
+            if (!_grounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && _time < 24f)
+            {
+                _time += 1f;
+                rigidbody2D.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+            }
+
+            if (_grounded)
+            {
+                _time = 0f;
+            }
         }
 
-        //}
-        //flip if needed
         void Flip(){
             _facingLeft = !_facingLeft;
             var theScale = transform.localScale;

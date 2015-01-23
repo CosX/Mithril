@@ -6,6 +6,9 @@ TagManager:
   - Platform
   - Enemy
   - Weapon
+  - ItemDatabase
+  - Inventory
+  - Canvas
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: Player
   User Layer 9: Platform
-  User Layer 10: 
-  User Layer 11: 
+  User Layer 10: background
+  User Layer 11: Canvas
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 
@@ -43,4 +46,8 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Background
+    userID: 1
+    uniqueID: 434600757
     locked: 0

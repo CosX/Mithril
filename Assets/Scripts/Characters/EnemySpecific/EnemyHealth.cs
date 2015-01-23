@@ -6,7 +6,7 @@ namespace Assets.Scripts.Characters.EnemySpecific
     public class EnemyHealth : MonoBehaviour {
 
         public float Health = 100f;
-        private bool _dead;
+        public bool IsDead;
 
         void Update ()
         {
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Characters.EnemySpecific
 
         void EnemyDead()
         {
-            _dead = true;
+            IsDead = true;
             Debug.Log("Enemy died!");
             //Animate death and drop loot
         }
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Characters.EnemySpecific
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            if (col.collider.tag == "Weapon" && !_dead)
+            if (col.collider.tag == "Weapon" && !IsDead)
             {
                 var weapon = col.collider.gameObject.GetComponent<AttackActivator>();
                 TakeDamage(weapon.Damage);

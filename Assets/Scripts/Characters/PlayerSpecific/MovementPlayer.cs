@@ -1,22 +1,28 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Characters.EnemySpecific;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Characters.PlayerSpecific
 {
     public class MovementPlayer : MonoBehaviour
     {
-        private Stamina _staminaObject;
+        
         public float MaxSpeed = 2f;
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
+        public LayerMask Baddies;
         public float JumpForce = 700f;
-        
-        private const float GroundRadius = 0.1f;
+
+        private Stamina _staminaObject;
+        private GUIText _actionText;
+        private const float GroundRadius = 0.5f;
         private bool _facingLeft = true;
         private bool _grounded;
         private float _time;
 
         void Start () {
             _staminaObject = GameObject.Find("Player").GetComponent<Stamina>();
+            _actionText = GameObject.FindGameObjectWithTag("ActionText").GetComponent<GUIText>();
         }
         void FixedUpdate ()
         {
@@ -42,12 +48,24 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             if (!_grounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && _time < 24f)
             {
                 _time += 1f;
-                rigidbody2D.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+                rigidbody2D.AddForce(new Vector2(0, 25f), ForceMode2D.Impulse);
             }
 
             if (_grounded)
             {
                 _time = 0f;
+            }
+
+            var rcObject = Physics2D.OverlapCircle(GroundCheck.position, 200f, Baddies);
+
+            if (rcObject != null && rcObject.transform.tag == "Enemy" && rcObject.GetComponent<EnemyHealth>().IsDead)
+            {
+                _actionText.text = "Press [E] to loot";
+                _actionText.enabled = true;
+            }
+            else
+            {
+                _actionText.enabled = false;
             }
         }
 
@@ -62,7 +80,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         {
             if (col.collider.tag == "Enemy")
             {
-                var vec2 = new Vector2(-50f, 5f);
+                var vec2 = new Vector2(-1500f, 1000f);
                 rigidbody2D.AddForce(vec2, ForceMode2D.Impulse);
             }
 

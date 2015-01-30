@@ -10,18 +10,17 @@ namespace Assets.Scripts.Characters.EnemySpecific
 
         void Update ()
         {
-            if (Health <= 0f) {
+            if (Health <= 0f && !IsDead)
+            {
                
                 EnemyDead();
-                
+                Debug.Log("EMENYDIEE!");
             }
         }
 
         void EnemyDead()
         {
             IsDead = true;
-            Debug.Log("Enemy died!");
-            //Animate death and drop loot
         }
 
         public void TakeDamage (float amount)

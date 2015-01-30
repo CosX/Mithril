@@ -3,14 +3,15 @@ using UnityEngine;
 
 namespace Assets.Scripts.Inventory
 {
-	public class Item : MonoBehaviour
+    [Serializable]
+	public class Item
 	{
 
 	    public string ItemName;
 	    public int ItemId;
 	    public string ItemDesc;
 	    public Sprite ItemIcon;
-	    public GameObject ItemModel;
+	    //public GameObject ItemModel;
 	    public int ItemPower;
 	    public int ItemValue;
         public ItemTypeDefines ItemType;
@@ -35,7 +36,7 @@ namespace Assets.Scripts.Inventory
 	        ItemPower = power;
 	        ItemValue = value;
 	        ItemType = type;
-	        ItemIcon = Resources.Load<Sprite>("" + name);
+            ItemIcon = Resources.Load<Sprite>("tileground");
 	    }
 
 	    public Item()

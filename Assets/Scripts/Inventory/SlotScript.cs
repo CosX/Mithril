@@ -45,10 +45,11 @@ namespace Assets.Scripts.Inventory
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
-		    if (_inventory.Items[SlotNumber].ItemType == Item.ItemTypeDefines.Consumable)
+		    var clickedItem = _inventory.Items[SlotNumber];
+            if (clickedItem.ItemType == Item.ItemTypeDefines.Consumable)
 		    {
-		        _inventory.Items[SlotNumber].ItemValue--;
-		        if (_inventory.Items[SlotNumber].ItemValue == 0)
+                clickedItem.ItemValue--;
+                if (clickedItem.ItemValue == 0)
 		        {
 		            _inventory.Items[SlotNumber] = new Item();
 		            _itemAmount.enabled = false;
@@ -56,14 +57,14 @@ namespace Assets.Scripts.Inventory
 		        }
 		    }
 
-			if (_inventory.Items[SlotNumber].ItemName == null && _inventory.DraggingItem)
+            if (clickedItem.ItemName == null && _inventory.DraggingItem)
 			{
 				_inventory.Items[SlotNumber] = _inventory.DraggedItem;
 				_inventory.CloseDraggedItem();
 			}
-			else if (_inventory.DraggingItem && _inventory.Items[SlotNumber].ItemName != null)
+            else if (_inventory.DraggingItem && clickedItem.ItemName != null)
 			{
-				_inventory.Items[_inventory.IndexOfDraggedItem] = _inventory.Items[SlotNumber];
+                _inventory.Items[_inventory.IndexOfDraggedItem] = clickedItem;
 				_inventory.Items[SlotNumber] = _inventory.DraggedItem;
 				_inventory.CloseDraggedItem();
 			}
@@ -71,9 +72,10 @@ namespace Assets.Scripts.Inventory
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			if (_inventory.Items[SlotNumber].ItemName != null && !_inventory.DraggingItem)
+		    var clickedItem = _inventory.Items[SlotNumber];
+            if (clickedItem.ItemName != null && !_inventory.DraggingItem)
 			{
-				_inventory.ShowTooltip(_inventory.Slots[SlotNumber].GetComponent<RectTransform>().localPosition, _inventory.Items[SlotNumber]);
+                _inventory.ShowTooltip(_inventory.Slots[SlotNumber].GetComponent<RectTransform>().localPosition, clickedItem);
 			}
 		}
 
@@ -88,14 +90,15 @@ namespace Assets.Scripts.Inventory
 
 		public void OnDrag(PointerEventData eventData)
 		{
-		    if (_inventory.Items[SlotNumber].ItemType == Item.ItemTypeDefines.Consumable)
+            var clickedItem = _inventory.Items[SlotNumber];
+            if (clickedItem.ItemType == Item.ItemTypeDefines.Consumable)
 		    {
-		        _inventory.Items[SlotNumber].ItemValue++;
+                clickedItem.ItemValue++;
 		    }
 
-			if (_inventory.Items[SlotNumber].ItemName != null)
+            if (clickedItem.ItemName != null)
 			{
-				_inventory.ShowDraggedItem(_inventory.Items[SlotNumber], SlotNumber);
+				_inventory.ShowDraggedItem(clickedItem, SlotNumber);
 				_inventory.Items[SlotNumber] = new Item();
 
 			    _itemAmount.enabled = false;

@@ -1,5 +1,4 @@
 ﻿using System;
-using Assets.Scripts.Inventory;
 
 namespace Assets.Scripts.Characters.EnemySpecific
 {

@@ -10,7 +10,6 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         public float MaxSpeed = 2f;
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
-        public LayerMask Baddies;
         public float JumpForce = 700f;
 
         private Stamina _staminaObject;
@@ -54,18 +53,6 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             if (_grounded)
             {
                 _time = 0f;
-            }
-
-            var rcObject = Physics2D.OverlapCircle(GroundCheck.position, 200f, Baddies);
-
-            if (rcObject != null && rcObject.transform.tag == "Enemy" && rcObject.GetComponent<EnemyHealth>().IsDead)
-            {
-                _actionText.text = "Press [E] to loot";
-                _actionText.enabled = true;
-            }
-            else
-            {
-                _actionText.enabled = false;
             }
         }
 

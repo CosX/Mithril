@@ -73,7 +73,7 @@ namespace Assets.Scripts.Inventory
                     slot.GetComponent<SlotScript>().SlotNumber = slotAmount;
                     Slots.Add(slot);
                     Items.Add(new Item());
-                    slot.transform.parent = gameObject.transform;
+                    slot.transform.SetParent(gameObject.transform);
                     slot.name = String.Format("Slot {0}.{1}", k, i);
                     slot.GetComponent<RectTransform>().localPosition = new Vector3(_x, _y, 0);
                     slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
@@ -92,25 +92,19 @@ namespace Assets.Scripts.Inventory
             AddItem(2);
             AddItem(3);
         }
-        void AddItem(int id)
+        public void AddItem(int id)
         {
-            for (int i = 0; i < _database.Items.Count - 1; i++)
+            foreach (var t in _database.Items)
             {
-                if (_database.Items[i].ItemId == id)
+                if (t.ItemId == id)
                 {
-                    var item = _database.Items[i];
+                    var item = t;
 
-                    if (_database.Items[i].ItemType == Item.ItemTypeDefines.Consumable)
+                    if (t.ItemType == Item.ItemTypeDefines.Consumable)
                     {
                         CheckIfItemExsists(id, item);
                         break;
                     }
-                    else
-                    {
-                        AddItemAtEmptySlot(item);
-                    }
-
-
                     AddItemAtEmptySlot(item);
                     break;
                 }
@@ -126,7 +120,7 @@ namespace Assets.Scripts.Inventory
                     Items[i].ItemValue = Items[i].ItemValue + 1;
                     break;
                 }
-                else if (i == Items.Count - 1)
+                if (i == Items.Count - 1)
                 {
                     AddItemAtEmptySlot(item);
                 }
@@ -135,7 +129,7 @@ namespace Assets.Scripts.Inventory
 
         void AddItemAtEmptySlot(Item item)
         {
-            for (int i = 0; i < Items.Count -1; i++)
+            for (var i = 0; i < Items.Count -1; i++)
             {
                 if (Items[i].ItemName == null)
                 {

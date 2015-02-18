@@ -31,7 +31,7 @@ namespace Assets.Scripts.LootBox
 		{
 			_deadEnemy = _lootbox.RayCastCollider2D;
 
-            if (_lootbox.Items.Count > 0 && _lootbox.Items[SlotNumber].ItemId != -1)
+			if (_lootbox.Items.Count > 0 && _lootbox.Items[SlotNumber].ItemId != -1)
 			{
 				CurrentItem = _lootbox.Items[SlotNumber];
 				_itemImage.enabled = true;
@@ -50,9 +50,9 @@ namespace Assets.Scripts.LootBox
 			var clickedItem = _lootbox.Items[SlotNumber];
 			var items = _deadEnemy.GetComponent<EnemyDrop>().ItemsDropped;
 			_lootbox.InventoryGameObject.GetComponent<Inventory.Inventory>().AddItem(clickedItem.ItemId);
-		    var firstOrDefault = items.FirstOrDefault(x => x == clickedItem);
-		    if (firstOrDefault != null) firstOrDefault.ItemId = -1;
-		    _lootbox.Items[SlotNumber] = new Item();
+			var firstOrDefault = items.FirstOrDefault(x => x == clickedItem);
+			if (firstOrDefault != null) firstOrDefault.ItemId = -1;
+			_lootbox.Items[SlotNumber] = new Item();
 			Destroy(gameObject);
 		}
 	}

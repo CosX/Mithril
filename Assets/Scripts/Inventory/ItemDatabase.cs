@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Inventory.ItemSpecific;
 using UnityEngine;
 
 namespace Assets.Scripts.Inventory
@@ -7,12 +8,11 @@ namespace Assets.Scripts.Inventory
 
         public List<Item> Items = new List<Item>(); 
 
-		// Use this for initialization
 		void Start () {
-	        Items.Add(new Item("Aromr", 0, "Good shit", 13, 14, Item.ItemTypeDefines.Chest));
-            Items.Add(new Item("DRANK", 1, "Gowefod shit", 13, 1, Item.ItemTypeDefines.Consumable));
-            Items.Add(new Item("Awefefromr", 2, "Gfefood shit", 13, 14, Item.ItemTypeDefines.Pants));
-            Items.Add(new Item("Arfefomr", 3, "Goowdesfd shit", 13, 14, Item.ItemTypeDefines.Hands));
+            Items.Add(new Armor("A Nice Hat", 0, "This hat is the hat of a scholar!", 10, Armor.ArmorTypeDefines.Head, 20, "tileground"));
+            Items.Add(new MeleeWeapon("Finest Sword of Infinity", 1, "This sword will bring your enemies to oblivion!", 100, MeleeWeapon.MeleeWeaponTypeDefines.Sword, 40, "tileground"));
+            Items.Add(new Consumable("Large Health Potion", 2, "This flazk wil meak splelling gardulaly wsroe!", 1, Consumable.ConsumableTypeDefines.Health, 50, "tileground"));
+            Items.Add(new RangedWeapon("Bow of Bowling", 3, "This bow was made by an alcoholic blacksmith. Not a good bow.", 1, RangedWeapon.RangedWeaponTypeDefines.Bow, 12, "tileground"));
 		}
 	
 	}

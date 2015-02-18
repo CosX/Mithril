@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Scripts.Inventory.ItemSpecific;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,6 +56,15 @@ namespace Assets.Scripts.Inventory
             DraggedItemGameObject.GetComponent<Image>().sprite = item.ItemIcon;
         }
 
+        public void ShowDraggedItem(Item item)
+        {
+            CloseTooltip();
+            DraggedItemGameObject.SetActive(true);
+            DraggedItem = item;
+            DraggingItem = true;
+            DraggedItemGameObject.GetComponent<Image>().sprite = item.ItemIcon;
+        }
+
         public void CloseDraggedItem()
         {
             DraggingItem = false;
@@ -88,7 +98,7 @@ namespace Assets.Scripts.Inventory
             }
             AddItem(0);
             AddItem(1);
-            AddItem(1);
+            AddItem(2);
             AddItem(2);
             AddItem(3);
         }
@@ -99,8 +109,8 @@ namespace Assets.Scripts.Inventory
                 if (t.ItemId == id)
                 {
                     var item = t;
-
-                    if (t.ItemType == Item.ItemTypeDefines.Consumable)
+                    var a = t as Consumable;
+                    if (a != null)
                     {
                         CheckIfItemExsists(id, item);
                         break;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Inventory.ItemSpecific;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 namespace Assets.Scripts.Inventory
@@ -12,7 +13,6 @@ namespace Assets.Scripts.Inventory
 		private Inventory _inventory;
 
 		private Text _itemAmount;
-		// Use this for initialization
 		void Start ()
 		{
 			_itemAmount = gameObject.transform.GetChild(1).GetComponent<Text>();
@@ -20,7 +20,6 @@ namespace Assets.Scripts.Inventory
 			_itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
 		}
 	
-		// Update is called once per frame
 		void Update () {
 
 			if (_inventory.Items[SlotNumber].ItemName != null)
@@ -31,7 +30,8 @@ namespace Assets.Scripts.Inventory
 				_itemImage.enabled = true;
 				_itemImage.sprite = _inventory.Items[SlotNumber].ItemIcon;
 
-				if (_inventory.Items[SlotNumber].ItemType == Item.ItemTypeDefines.Consumable)
+                var a = _inventory.Items[SlotNumber] as Consumable;
+				if (a != null)
 				{
 					_itemAmount.enabled = true;
 					_itemAmount.text = "" + _inventory.Items[SlotNumber].ItemValue;
@@ -46,7 +46,8 @@ namespace Assets.Scripts.Inventory
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			var clickedItem = _inventory.Items[SlotNumber];
-			if (clickedItem.ItemType == Item.ItemTypeDefines.Consumable)
+            var a = clickedItem as Consumable;
+			if (a != null)
 			{
 				clickedItem.ItemValue--;
 				if (clickedItem.ItemValue == 0)
@@ -91,7 +92,8 @@ namespace Assets.Scripts.Inventory
 		public void OnDrag(PointerEventData eventData)
 		{
 			var clickedItem = _inventory.Items[SlotNumber];
-			if (clickedItem.ItemType == Item.ItemTypeDefines.Consumable)
+            var a = clickedItem as Consumable;
+            if (a != null)
 			{
 				clickedItem.ItemValue++;
 			}

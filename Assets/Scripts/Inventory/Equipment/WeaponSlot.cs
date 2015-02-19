@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Inventory.Equipment
 {
-    public class ArmorSlot : MonoBehaviour, IPointerDownHandler, IDragHandler
+    public class WeaponSlot : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
-        public Armor CurrentlyEquippedArmor = new Armor();
-        public Armor.ArmorTypeDefines ArmorType;
+        public Weapon CurrentlyEquippedWeapon = new Weapon();
+        public Weapon.WeaponTypeDefines WeaponType;
         public GameObject InventoryGameObject;
         public GameObject PlayerGameObject;
 
@@ -26,10 +26,10 @@ namespace Assets.Scripts.Inventory.Equipment
 
         void Update()
         {
-            if (CurrentlyEquippedArmor.ItemName != null)
+            if (CurrentlyEquippedWeapon.ItemName != null)
             {
                 _itemImage.enabled = true;
-                _itemImage.sprite = CurrentlyEquippedArmor.ItemIcon;
+                _itemImage.sprite = CurrentlyEquippedWeapon.ItemIcon;
             }
             else
             {
@@ -41,17 +41,16 @@ namespace Assets.Scripts.Inventory.Equipment
         {
             var inventory = InventoryGameObject.GetComponent<Inventory>();
 
-            var draggeditem = inventory.DraggedItem as Armor;
-            if (inventory.DraggingItem && draggeditem != null && CurrentlyEquippedArmor.ItemName == null && draggeditem.ArmorType == ArmorType)
+            var draggeditem = inventory.DraggedItem as Weapon;
+            if (inventory.DraggingItem && draggeditem != null && CurrentlyEquippedWeapon.ItemName == null && draggeditem.WeaponType == WeaponType)
             {
-                CurrentlyEquippedArmor = draggeditem;
-                _health.health += CurrentlyEquippedArmor.ArmorProtection;
+                CurrentlyEquippedWeapon = draggeditem;
                 inventory.CloseDraggedItem();
             }
-            else if (inventory.DraggingItem && CurrentlyEquippedArmor.ItemName != null)
+            else if (inventory.DraggingItem && CurrentlyEquippedWeapon.ItemName != null)
             {
-                inventory.Items[inventory.IndexOfDraggedItem] = CurrentlyEquippedArmor;
-                CurrentlyEquippedArmor = draggeditem;
+                inventory.Items[inventory.IndexOfDraggedItem] = CurrentlyEquippedWeapon;
+                CurrentlyEquippedWeapon = draggeditem;
                 inventory.CloseDraggedItem();
             }
         }
@@ -60,12 +59,11 @@ namespace Assets.Scripts.Inventory.Equipment
         {
             var inventory = InventoryGameObject.GetComponent<Inventory>();
 
-            var clickedItem = CurrentlyEquippedArmor;
+            var clickedItem = CurrentlyEquippedWeapon;
             if (clickedItem.ItemName != null)
             {
                 inventory.ShowDraggedItem(clickedItem);
-                _health.health -= clickedItem.ArmorProtection;
-                CurrentlyEquippedArmor = new Armor();
+                CurrentlyEquippedWeapon = new Weapon();
             }
         }
 

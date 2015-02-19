@@ -2,9 +2,10 @@
 
 namespace Assets.Scripts.Inventory.Equipment
 {
-    public class ArmorFetcher : MonoBehaviour
+    public class WeaponFetcher : MonoBehaviour
     {
-        public ArmorSlot ArmorSlot;
+        public WeaponSlot WeaponSlot;
+        
         private SpriteRenderer _sprite = new SpriteRenderer();
         
 
@@ -16,9 +17,9 @@ namespace Assets.Scripts.Inventory.Equipment
 
         private void Update()
         {
-            if (ArmorSlot.CurrentlyEquippedArmor.ItemName != null)
+            if (WeaponSlot.CurrentlyEquippedWeapon.ItemName != null)
             {
-                _sprite.sprite = ArmorSlot.CurrentlyEquippedArmor.ArmorSprite;
+                _sprite.sprite = WeaponSlot.CurrentlyEquippedWeapon.WeaponSprite;
             }
             else
             {

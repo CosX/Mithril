@@ -4,7 +4,9 @@ using UnityEngine;
 namespace Assets.Scripts.Characters.PlayerSpecific
 {
 	public class Health : MonoBehaviour {
-		public float health = 100f;
+        public float BaseHealth = 100f;
+
+        public float health = 100f;
 		private float _diff;
 		private bool _dead;
 

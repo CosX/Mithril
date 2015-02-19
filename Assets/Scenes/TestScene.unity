@@ -188,7 +188,6 @@ RectTransform:
   - {fileID: 1093048035}
   - {fileID: 707222201}
   - {fileID: 251911559}
-  - {fileID: 1692020358}
   m_Father: {fileID: 867120391}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -305,7 +304,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .445105612, y: .445105791, z: .445105791}
-  m_Children: []
+  m_Children:
+  - {fileID: 1692020358}
   m_Father: {fileID: 140586412}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -586,6 +586,83 @@ Prefab:
   m_RootGameObject: {fileID: 293858590}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &426705540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 426705541}
+  - 222: {fileID: 426705544}
+  - 114: {fileID: 426705543}
+  - 114: {fileID: 426705542}
+  m_Layer: 5
+  m_Name: MeleeWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &426705541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426705540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1267826712}
+  m_Father: {fileID: 1692020358}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 50, y: 44.999939}
+  m_SizeDelta: {x: 50.4000015, y: 50}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &426705542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426705540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f78fc6e005ccb5459bbb4bc8e39f462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponType: 0
+  InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
+--- !u!114 &426705543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426705540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &426705544
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426705540}
 --- !u!1 &474460456
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457b9aa5a85f940408eaef32f910f09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseHealth: 100
   health: 100
 --- !u!114 &485761662
 MonoBehaviour:
@@ -1092,7 +1170,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &707222200
@@ -1333,6 +1411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArmorType: 3
   InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
 --- !u!114 &818819440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArmorType: 4
   InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
 --- !u!114 &943000016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,6 +2056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArmorType: 0
   InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
 --- !u!1 &1209032746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2189,67 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1245678974}
+--- !u!1 &1267826711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1267826712}
+  - 222: {fileID: 1267826714}
+  - 114: {fileID: 1267826713}
+  m_Layer: 5
+  m_Name: ItemIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1267826712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267826711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426705541}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -3.87430191e-07, y: 0}
+  m_SizeDelta: {x: 40, y: 40}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1267826713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267826711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1267826714
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267826711}
 --- !u!1 &1318063492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,6 +2327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArmorType: 1
   InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
 --- !u!114 &1400201009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,7 +2711,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1692020357
@@ -2596,18 +2739,19 @@ RectTransform:
   m_GameObject: {fileID: 1692020357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.24665785, y: 2.24665689, z: 2.24665689}
   m_Children:
   - {fileID: 1168922741}
   - {fileID: 2115183607}
   - {fileID: 818819438}
   - {fileID: 943000014}
   - {fileID: 1400201007}
-  m_Father: {fileID: 140586412}
-  m_RootOrder: 5
+  - {fileID: 426705541}
+  m_Father: {fileID: 293858591}
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -336.799988, y: 89.6279984}
+  m_AnchoredPosition: {x: -354.297882, y: 518.144287}
   m_SizeDelta: {x: 177.5, y: 173.300003}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1692020359
@@ -2877,6 +3021,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1952368788}
   - 212: {fileID: 1952368789}
+  - 114: {fileID: 1952368790}
   m_Layer: 8
   m_Name: HeadArmor
   m_TagString: Player
@@ -2891,8 +3036,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952368787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0900000036, y: 1.98000002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.98000002, z: 0}
+  m_LocalScale: {x: .0700000003, y: .0700000003, z: 1}
   m_Children: []
   m_Father: {fileID: 485761659}
   m_RootOrder: 3
@@ -2915,9 +3060,21 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1952368790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952368787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243d341503e51ab41859f4c2e1f8527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArmorSlot: {fileID: 1168922744}
 --- !u!1 &2075370401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,7 +3122,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2102896138
@@ -3171,6 +3328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArmorType: 2
   InventoryGameObject: {fileID: 293858590}
+  PlayerGameObject: {fileID: 485761655}
 --- !u!114 &2115183609
 MonoBehaviour:
   m_ObjectHideFlags: 0

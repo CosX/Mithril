@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Inventory.Equipment
 {
-    public class ArmorSlot : MonoBehaviour, IPointerDownHandler, IDragHandler
+    public class ArmorSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
     {
         public Armor CurrentlyEquippedArmor = new Armor();
         public Armor.ArmorTypeDefines ArmorType;
@@ -69,5 +69,24 @@ namespace Assets.Scripts.Inventory.Equipment
             }
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            var inventory = InventoryGameObject.GetComponent<Inventory>();
+            var clickedItem = CurrentlyEquippedArmor;
+            if (clickedItem.ItemName != null && !inventory.DraggingItem)
+            {
+                inventory.ShowTooltip(gameObject.GetComponent<RectTransform>().localPosition, clickedItem);
+            }
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            var inventory = InventoryGameObject.GetComponent<Inventory>();
+            if (CurrentlyEquippedArmor.ItemName != null)
+            {
+                inventory.CloseTooltip();
+            }
+
+        }
     }
 }

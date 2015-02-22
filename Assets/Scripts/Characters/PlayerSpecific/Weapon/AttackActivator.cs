@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Inventory.Equipment;
+using UnityEngine;
 
 namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 {
@@ -7,19 +8,21 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 		public float Damage = 25f;
 		public Vector3 Knockback = new Vector3(30, 30);
 		private bool _attacking;
-
+	    public GameObject WeaponSlot;
+	    private WeaponSlot _weapon;
 		void Start ()
 		{
 			renderer.enabled = false;
+		    _weapon = WeaponSlot.GetComponent<WeaponSlot>();
 		}
 	
 		// Update is called once per frame
 		void Update () {
-
-			if (Input.GetKeyDown(KeyCode.Comma) && _attacking == false)
-			{
-				DoAttack();
-			}
+            if (Input.GetKeyDown(KeyCode.Comma) && _attacking == false && _weapon.CurrentlyEquippedWeapon.ItemName != null)
+		    {
+		        DoAttack();
+		    }
+			
 		}
 
 		void FixedUpdate()

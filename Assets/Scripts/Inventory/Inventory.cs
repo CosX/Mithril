@@ -36,7 +36,7 @@ namespace Assets.Scripts.Inventory
         public void ShowTooltip(Vector3 toolposition, Item item)
         {
             Tooltip.SetActive(true);
-            Tooltip.GetComponent<RectTransform>().localPosition = new Vector3(toolposition.x, toolposition.y, toolposition.z);
+            Tooltip.GetComponent<RectTransform>().localPosition = new Vector3(Input.mousePosition.x -550, Input.mousePosition.y -290, toolposition.z);
             Tooltip.transform.GetChild(0).GetComponent<Text>().text = item.ItemName;
             Tooltip.transform.GetChild(1).GetComponent<Text>().text = item.ItemDesc;
         }

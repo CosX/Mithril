@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Characters.PlayerSpecific;
+using Assets.Scripts.Characters.PlayerSpecific.Weapon;
 using Assets.Scripts.Inventory.ItemSpecific;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Inventory.Equipment
 {
-    public class WeaponSlot : MonoBehaviour, IPointerDownHandler, IDragHandler
+    public class WeaponSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
     {
         public Weapon CurrentlyEquippedWeapon = new Weapon();
         public Weapon.WeaponTypeDefines WeaponType;
@@ -14,14 +15,12 @@ namespace Assets.Scripts.Inventory.Equipment
         public GameObject PlayerGameObject;
 
         private Image _itemImage;
-        private Health _health;
-        private Stamina _stamina;
+        private AttackActivator _damageControl;
 
         void Start()
         {
             _itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
-            _health = PlayerGameObject.GetComponent<Health>();
-            _stamina = PlayerGameObject.GetComponent<Stamina>();
+            _damageControl = GameObject.FindGameObjectWithTag("Weapon").GetComponent<AttackActivator>();
         }
 
         void Update()
@@ -45,6 +44,8 @@ namespace Assets.Scripts.Inventory.Equipment
             if (inventory.DraggingItem && draggeditem != null && CurrentlyEquippedWeapon.ItemName == null && draggeditem.WeaponType == WeaponType)
             {
                 CurrentlyEquippedWeapon = draggeditem;
+                _damageControl.Damage = CurrentlyEquippedWeapon.WeaponStrength;
+                _damageControl.Knockback = CurrentlyEquippedWeapon.Knockback;
                 inventory.CloseDraggedItem();
             }
             else if (inventory.DraggingItem && CurrentlyEquippedWeapon.ItemName != null)
@@ -63,9 +64,30 @@ namespace Assets.Scripts.Inventory.Equipment
             if (clickedItem.ItemName != null)
             {
                 inventory.ShowDraggedItem(clickedItem);
+                _damageControl.Damage = 25f;
+                _damageControl.Knockback = new Vector3(30f, 30f);
                 CurrentlyEquippedWeapon = new Weapon();
             }
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            var inventory = InventoryGameObject.GetComponent<Inventory>();
+            var clickedItem = CurrentlyEquippedWeapon;
+            if (clickedItem.ItemName != null && !inventory.DraggingItem)
+            {
+                inventory.ShowTooltip(gameObject.GetComponent<RectTransform>().localPosition, clickedItem);
+            }
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            var inventory = InventoryGameObject.GetComponent<Inventory>();
+            if (CurrentlyEquippedWeapon.ItemName != null)
+            {
+                inventory.CloseTooltip();
+            }
+
+        }
     }
 }

@@ -742,6 +742,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   JumpForce: 1200
+  FacingLeft: 1
 --- !u!212 &485761658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1311,8 +1312,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 816699419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -97.060997, y: 285.920013, z: 0}
-  m_LocalScale: {x: 45.2135162, y: 351.549683, z: 136.886429}
+  m_LocalPosition: {x: -71.6999969, y: 302.200012, z: 0}
+  m_LocalScale: {x: 93.9648438, y: 852.008545, z: 136.886429}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2854,7 +2855,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   Knockback: {x: 700, y: 700, z: 0}
+  WeaponType: 0
+  Projectile: {fileID: 472032, guid: b80485bb138f04440bccc0b9c349e75f, type: 2}
   WeaponSlot: {fileID: 426705540}
+  ShootingRate: .25
 --- !u!114 &1715422997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3077,7 +3081,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   Knockback: {x: 700, y: 700, z: 0}
+  WeaponType: 1
+  Projectile: {fileID: 472032, guid: b80485bb138f04440bccc0b9c349e75f, type: 2}
   WeaponSlot: {fileID: 2140407624}
+  ShootingRate: .25
 --- !u!212 &1897063868
 SpriteRenderer:
   m_ObjectHideFlags: 0

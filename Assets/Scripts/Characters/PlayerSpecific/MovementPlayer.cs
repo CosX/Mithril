@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Characters.EnemySpecific;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Characters.PlayerSpecific
 {
@@ -11,11 +9,11 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         public Transform GroundCheck;
         public LayerMask WhatIsGround;
         public float JumpForce = 700f;
+        public bool FacingLeft = true;
 
         private Stamina _staminaObject;
         private GUIText _actionText;
         private const float GroundRadius = 0.5f;
-        private bool _facingLeft = true;
         private bool _grounded;
         private float _time;
 
@@ -28,9 +26,9 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             _grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
             var move = Input.GetAxis ("Horizontal");
             rigidbody2D.velocity = new Vector3(move * MaxSpeed, rigidbody2D.velocity.y);
-            if (move < 0 && !_facingLeft) {
+            if (move < 0 && !FacingLeft) {
                 Flip ();
-            } else if (move > 0 && _facingLeft) {
+            } else if (move > 0 && FacingLeft) {
                 Flip ();
             }
             collider2D.isTrigger = !_grounded;
@@ -57,7 +55,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         }
 
         void Flip(){
-            _facingLeft = !_facingLeft;
+            FacingLeft = !FacingLeft;
             var theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;

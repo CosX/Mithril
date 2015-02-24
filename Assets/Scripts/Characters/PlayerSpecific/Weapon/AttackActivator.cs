@@ -69,31 +69,34 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
             if (!CanAttack) return;
             _shootCooldown = ShootingRate;
 
-            var shotTransform = Instantiate(Projectile) as Transform;
+            var shotTransform = Instantiate(_weapon.CurrentlyEquippedWeapon.Projectile) as GameObject;
 
-            shotTransform.position = transform.position;
+            if (shotTransform != null)
+            {
+                shotTransform.transform.position = transform.position;
 
-            var shot = shotTransform.gameObject.GetComponent<Projectile>();
+                var shot = shotTransform.GetComponent<Projectile>();
             
-            if (shot != null)
-            {
-                shot.IsEnemyShot = isEnemy;
-                shot.Knockback = _weapon.CurrentlyEquippedWeapon.Knockback;
-                shot.Damage = _weapon.CurrentlyEquippedWeapon.WeaponStrength;
-            }
+                if (shot != null)
+                {
+                    shot.IsEnemyShot = isEnemy;
+                    shot.Knockback = _weapon.CurrentlyEquippedWeapon.Knockback;
+                    shot.Damage = _weapon.CurrentlyEquippedWeapon.WeaponStrength;
+                }
 
-            var move = shotTransform.gameObject.GetComponent<FixedMovement>();
-            if (move != null)
-            {
-                if (_movement.FacingLeft)
+                var move = shotTransform.GetComponent<FixedMovement>();
+                if (move != null)
                 {
-                    move.Direction = transform.up;
-                }
-                else
-                {
-                    move.Direction = -transform.up;
-                }
+                    if (_movement.FacingLeft)
+                    {
+                        move.Direction = transform.up;
+                    }
+                    else
+                    {
+                        move.Direction = -transform.up;
+                    }
                     
+                }
             }
         }
 

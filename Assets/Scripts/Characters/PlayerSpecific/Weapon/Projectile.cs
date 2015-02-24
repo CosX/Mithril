@@ -10,7 +10,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 
         void Start()
         {
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 1);
         }
     }
 }

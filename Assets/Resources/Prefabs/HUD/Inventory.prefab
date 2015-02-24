@@ -61,9 +61,7 @@ MonoBehaviour:
     ItemId: 0
     ItemDesc: 
     ItemIcon: {fileID: 0}
-    ItemPower: 0
     ItemValue: 0
-    ItemType: 0
   IndexOfDraggedItem: 0
 --- !u!222 &22239258
 CanvasRenderer:

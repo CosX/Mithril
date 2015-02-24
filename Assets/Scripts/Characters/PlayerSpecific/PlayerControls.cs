@@ -30,11 +30,20 @@ namespace Assets.Scripts.Characters.PlayerSpecific
 
             RayCastCollider2D = Physics2D.OverlapCircle(PlayerTransform.position, 200f, Baddies);
 
-            if (RayCastCollider2D != null && RayCastCollider2D.transform.tag == "Enemy" && RayCastCollider2D.GetComponent<EnemyHealth>().IsDead && RayCastCollider2D.GetComponent<EnemyDrop>().ItemsDropped.Any(item => item.ItemName != null))
+            if (RayCastCollider2D != null && RayCastCollider2D.transform.tag == "Enemy" && 
+                RayCastCollider2D.GetComponent<EnemyHealth>().IsDead && 
+                RayCastCollider2D.GetComponent<EnemyDrop>().ItemsDropped.Any(item => item.ItemName != null))
             {
                 _actionText.text = "Press [E] to loot";
                 _actionText.enabled = true;
                 DeadEnemyHit = true;
+            }
+            else if (RayCastCollider2D != null && RayCastCollider2D.transform.tag == "Enemy" &&
+                     RayCastCollider2D.GetComponent<EnemyHealth>().IsDead &&
+                     !RayCastCollider2D.GetComponent<EnemyHealth>().IsLooted &&
+                     RayCastCollider2D.GetComponent<EnemyDrop>().ItemsDropped.All(item => item.ItemName == null))
+            {
+                RayCastCollider2D.GetComponent<EnemyHealth>().DestroyAfterLoot();
             }
             else
             {

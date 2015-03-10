@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: b5c25a40e107e194aabe7a62b036365b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walltiles_0
+    21300002: walltiles_1
+    21300004: walltiles_2
+    21300006: walltiles_3
+    21300008: walltiles_4
+    21300010: walltiles_5
+    21300012: walltiles_6
+    21300014: walltiles_7
+    21300016: walltiles_8
+    21300018: walltiles_9
+    21300020: walltiles_10
+    21300022: walltiles_11
+    21300024: walltiles_12
+    21300026: walltiles_13
+    21300028: walltiles_14
+    21300030: walltiles_15
+    21300032: walltiles_16
+    21300034: walltiles_17
+    21300036: walltiles_18
+    21300038: walltiles_19
+    21300040: walltiles_20
+    21300042: walltiles_21
+    21300044: walltiles_22
+    21300046: walltiles_23
+    21300048: walltiles_24
+    21300050: walltiles_25
+    21300052: walltiles_26
+    21300054: walltiles_27
+    21300056: walltiles_28
+    21300058: walltiles_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walltiles_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1497
+        width: 887
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_1
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1497
+        width: 886
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_2
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 378
+        width: 184
+        height: 1273
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_3
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 297
+        width: 602
+        height: 1451
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_4
+      rect:
+        serializedVersion: 2
+        x: 2687
+        y: 301
+        width: 687
+        height: 1574
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_5
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 301
+        width: 738
+        height: 1246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1330
+        width: 887
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_7
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1330
+        width: 886
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_8
+      rect:
+        serializedVersion: 2
+        x: 4182
+        y: 1206
+        width: 270
+        height: 270
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1161
+        width: 887
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_10
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1161
+        width: 886
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_11
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 906
+        width: 270
+        height: 270
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 947
+        width: 435
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_13
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 947
+        width: 437
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 747
+        width: 435
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_15
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 747
+        width: 437
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_16
+      rect:
+        serializedVersion: 2
+        x: 4182
+        y: 618
+        width: 270
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_17
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 626
+        width: 269
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 547
+        width: 435
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_19
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 547
+        width: 437
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_20
+      rect:
+        serializedVersion: 2
+        x: 4182
+        y: 290
+        width: 270
+        height: 270
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_21
+      rect:
+        serializedVersion: 2
+        x: 4548
+        y: 290
+        width: 272
+        height: 270
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 851
+        height: 516
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_23
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 464
+        width: 851
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_24
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 397
+        width: 351
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_25
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 413
+        width: 351
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_26
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 346
+        width: 185
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_27
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 346
+        width: 185
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_28
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 346
+        width: 185
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walltiles_29
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 346
+        width: 186
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

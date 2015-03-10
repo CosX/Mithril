@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Characters.EnemySpecific;
+using UnityEngine;
 
 namespace Assets.Scripts.Characters.PlayerSpecific
 {
@@ -65,8 +66,8 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         {
             if (col.collider.tag == "Enemy")
             {
-                var vec2 = new Vector2(-1500f, 1000f);
-                rigidbody2D.AddForce(vec2, ForceMode2D.Impulse);
+                var kb = col.gameObject.GetComponent<EnemyBase>().Knockback;
+                rigidbody2D.AddForce(kb, ForceMode2D.Impulse);
             }
 
         }

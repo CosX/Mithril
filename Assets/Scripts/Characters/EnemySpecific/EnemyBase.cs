@@ -6,8 +6,7 @@ namespace Assets.Scripts.Characters.EnemySpecific
     public class EnemyBase : MonoBehaviour {
 
         public float DamagePerHit = 10f;
-        public float KnockbackX = -100f;
-        public float KnockbackY = 30f;
+        public Vector3 Knockback = new Vector3(30f, 30f);
         public float Force = 30f;
 
         private GameObject _playerObject;

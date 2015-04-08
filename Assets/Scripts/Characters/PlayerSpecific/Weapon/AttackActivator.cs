@@ -17,7 +17,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 	    private MovementPlayer _movement;
 		void Start ()
 		{
-			renderer.enabled = false;
+			GetComponent<Renderer>().enabled = false;
 		    _weapon = WeaponSlot.GetComponent<WeaponSlot>();
             _shootCooldown = 0f;
 		    _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementPlayer>();
@@ -45,10 +45,10 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 			}
 			else
 			{
-				renderer.enabled = false;
+				GetComponent<Renderer>().enabled = false;
 				transform.localRotation = new Quaternion(0, 0, 90, 90);
 				_attacking = false;
-				collider2D.isTrigger = true;
+				GetComponent<Collider2D>().isTrigger = true;
 			}
 
             if (_shootCooldown > 0)
@@ -59,9 +59,9 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 
 		private void DoMeleeAttack()
 		{
-			renderer.enabled = true;
+			GetComponent<Renderer>().enabled = true;
 			_attacking = true;
-			collider2D.isTrigger = false;
+			GetComponent<Collider2D>().isTrigger = false;
 
 		}
         public void FireProjectile(bool isEnemy)

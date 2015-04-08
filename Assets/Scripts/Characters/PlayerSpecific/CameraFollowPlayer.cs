@@ -12,8 +12,8 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         {
             if (Target)
             {
-                var point = camera.WorldToViewportPoint(Target.position);
-                var delta = Target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+                var point = GetComponent<Camera>().WorldToViewportPoint(Target.position);
+                var delta = Target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
                 var destination = transform.position + delta;
                 transform.position = Vector3.SmoothDamp(transform.position, destination, ref _velocity, DampTime);
             }

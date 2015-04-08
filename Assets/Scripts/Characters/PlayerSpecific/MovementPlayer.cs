@@ -26,27 +26,27 @@ namespace Assets.Scripts.Characters.PlayerSpecific
         {
             _grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
             var move = Input.GetAxis ("Horizontal");
-            rigidbody2D.velocity = new Vector3(move * MaxSpeed, rigidbody2D.velocity.y);
+            GetComponent<Rigidbody2D>().velocity = new Vector3(move * MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
             if (move < 0 && !FacingLeft) {
                 Flip ();
             } else if (move > 0 && FacingLeft) {
                 Flip ();
             }
-            collider2D.isTrigger = !_grounded;
+            GetComponent<Collider2D>().isTrigger = !_grounded;
         }
 
         void Update()
         {
             if (_grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
-                rigidbody2D.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
                 _grounded = false;
                 _staminaObject.DrainStamina(25);
             }
             if (!_grounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && _time < 24f)
             {
                 _time += 1f;
-                rigidbody2D.AddForce(new Vector2(0, 25f), ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 25f), ForceMode2D.Impulse);
             }
 
             if (_grounded)
@@ -67,7 +67,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific
             if (col.collider.tag == "Enemy")
             {
                 var kb = col.gameObject.GetComponent<EnemyBase>().Knockback;
-                rigidbody2D.AddForce(kb, ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().AddForce(kb, ForceMode2D.Impulse);
             }
 
         }

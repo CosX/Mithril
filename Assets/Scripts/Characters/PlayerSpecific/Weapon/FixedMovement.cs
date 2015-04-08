@@ -19,7 +19,7 @@ namespace Assets.Scripts.Characters.PlayerSpecific.Weapon
 
         void FixedUpdate()
         {
-            rigidbody2D.velocity = _movement;
+            GetComponent<Rigidbody2D>().velocity = _movement;
         }
     }
 }

@@ -51,14 +51,14 @@ namespace Assets.Scripts.Characters.EnemySpecific
                 col.collider.isTrigger = false;
                 var weapon = col.collider.gameObject.GetComponent<AttackActivator>();
                 TakeDamage(weapon.Damage);
-                rigidbody2D.AddForce(weapon.Knockback, ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().AddForce(weapon.Knockback, ForceMode2D.Impulse);
             }
             else if (col.collider.tag == "Projectile" && !IsDead)
             {
                 col.collider.isTrigger = false;
                 var projectile = col.collider.gameObject.GetComponent<Projectile>();
                 TakeDamage(projectile.Damage);
-                rigidbody2D.AddForce(projectile.Knockback, ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().AddForce(projectile.Knockback, ForceMode2D.Impulse);
                 Destroy(col.collider.gameObject);
 
             }

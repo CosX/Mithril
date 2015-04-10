@@ -880,6 +880,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 663583188}
   - 212: {fileID: 663583189}
+  - 114: {fileID: 663583190}
   m_Layer: 8
   m_Name: FootArmor
   m_TagString: Untagged
@@ -894,7 +895,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663583187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.32999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 485761659}
@@ -925,6 +926,18 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &663583190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663583187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243d341503e51ab41859f4c2e1f8527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArmorSlot: {fileID: 1400201008}
 --- !u!1 &707222200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2398,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1676297506}
   - 212: {fileID: 1676297507}
+  - 114: {fileID: 1676297508}
   m_Layer: 8
   m_Name: ChestArmor
   m_TagString: Untagged
@@ -2399,8 +2413,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1676297505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0299999993, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -.0299999993, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 485761659}
   m_RootOrder: 3
@@ -2430,6 +2444,18 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1676297508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676297505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243d341503e51ab41859f4c2e1f8527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArmorSlot: {fileID: 2115183608}
 --- !u!1 &1692020357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,8 +2846,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952368787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.98000002, z: 0}
-  m_LocalScale: {x: .0700000003, y: .0700000003, z: 1}
+  m_LocalPosition: {x: 0, y: 2.29999995, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 485761659}
   m_RootOrder: 2
@@ -2872,6 +2898,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2075370402}
   - 212: {fileID: 2075370403}
+  - 114: {fileID: 2075370404}
   m_Layer: 8
   m_Name: LegArmor
   m_TagString: Untagged
@@ -2886,8 +2913,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075370401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 485761659}
   m_RootOrder: 4
@@ -2917,6 +2944,18 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2075370404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075370401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243d341503e51ab41859f4c2e1f8527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArmorSlot: {fileID: 818819439}
 --- !u!1 &2102896138
 GameObject:
   m_ObjectHideFlags: 0

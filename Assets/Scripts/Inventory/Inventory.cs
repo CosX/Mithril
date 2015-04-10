@@ -101,6 +101,9 @@ namespace Assets.Scripts.Inventory
             AddItem(2);
             AddItem(2);
             AddItem(3);
+            AddItem(4);
+            AddItem(5);
+            AddItem(6);
         }
         public void AddItem(int id)
         {

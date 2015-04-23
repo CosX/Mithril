@@ -1,11 +1,28 @@
-[{
-	"itemname": "",
-	"itemid": 1,
-	"itemdescription":"asdfsfd",
-	"itemvalue": 30,
-	"weaponstrength": 40,
-	"icon": "",
-	"sprite": "",
-	"knockback": "30,40",
-	"projectile": ""
-}]
+[
+    {
+        "ItemName": "Finest Sword of Infinity",
+        "ItemId": 1,
+        "ItemDesc": "This sword will bring your enemies to oblivion!",
+        "WeaponType": 0,
+        "ItemValue": 190,
+        "WeaponStrength": 40,
+        "ItemIcon": "tileground",
+        "WeaponSprite": "8_bit_sword_by_xxx515xxx-d4lyhdi",
+        "KnockbackX": 30,
+        "KnockbackY": 30,
+        "ProjectilePath": ""
+    },
+    {
+        "ItemName": "Bow of Bowling",
+        "ItemId": 3,
+        "ItemDesc": "This bow was made by an alcoholic blacksmith. Not a good bow.",
+        "WeaponType": 1,
+        "ItemValue": 10,
+        "WeaponStrength": 12,
+        "ItemIcon": "tileground",
+        "WeaponSprite": "8_bit_sword_by_xxx515xxx-d4lyhdi",
+        "KnockbackX": 30,
+        "KnockbackY": 30,
+        "ProjectilePath": "Prefabs/Projectiles/Projectile"
+    }
+]

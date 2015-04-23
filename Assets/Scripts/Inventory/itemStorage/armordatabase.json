@@ -1,10 +1,42 @@
-{
-	"itemname": "",
-	"itemid": 1,
-	"itemdescription":"asdfsfd",
-	"itemvalue": 30,
-	"armortype": 1,
-	"armorprotection":40,
-	"icon": "",
-	"sprite": ""
-}
+[
+    {
+        "ItemName": "A Nice Hat",
+        "ItemId": 0,
+        "ItemDesc": "This hat is the hat of a scholar!",
+        "ItemValue": 30,
+        "ArmorType": 0,
+        "ArmorProtection": 40,
+        "ItemIcon": "tileground",
+        "ArmorSprite": "tileground"
+    },
+    {
+        "ItemName": "Good ol' Hat",
+        "ItemId": 4,
+        "ItemDesc": "This hat is the oldest hat you've ever seen!",
+        "ItemValue": 10,
+        "ArmorType": 0,
+        "ArmorProtection": 40,
+        "ItemIcon": "Textures/Raw/hats/old-hat",
+        "ArmorSprite": "Textures/Raw/hats/old-hat"
+    },
+    {
+        "ItemName": "Greasy Jeans",
+        "ItemId": 5,
+        "ItemDesc": "These pants were cleaned with dirt.",
+        "ItemValue": 10,
+        "ArmorType": 3,
+        "ArmorProtection": 20,
+        "ItemIcon": "Textures/Raw/pants/old-jeans",
+        "ArmorSprite": "Textures/Raw/pants/old-jeans"
+    },
+    {
+        "ItemName": "Ol' Rag",
+        "ItemId": 6,
+        "ItemDesc": "Drenched in sweat and ripped!",
+        "ItemValue": 10,
+        "ArmorType": 2,
+        "ArmorProtection": 20,
+        "ItemIcon": "Textures/Raw/chests/old-rag",
+        "ArmorSprite": "Textures/Raw/chests/old-rag"
+    }
+]

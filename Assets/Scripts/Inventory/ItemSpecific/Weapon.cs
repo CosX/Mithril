@@ -14,7 +14,7 @@ namespace Assets.Scripts.Inventory.ItemSpecific
 			Melee,
 			Ranged
 		}
-		public Weapon(string name, int id, string desc, int value, WeaponTypeDefines type, int weaponstr, string iconpath, string spritepath, Vector3 knockback)
+		public Weapon(string name, int id, string desc, int value, WeaponTypeDefines type, int weaponstr, string iconpath, string spritepath, int knockbackX, int knockbackY)
 		{
 			ItemName = name;
 			ItemId = id;
@@ -24,10 +24,10 @@ namespace Assets.Scripts.Inventory.ItemSpecific
 			WeaponStrength = weaponstr;
 			ItemIcon = Resources.Load<Sprite>(iconpath);
             WeaponSprite = Resources.Load<Sprite>(spritepath);
-		    Knockback = knockback;
+            Knockback = new Vector3(knockbackX, knockbackY);
 		}
 
-        public Weapon(string name, int id, string desc, int value, WeaponTypeDefines type, int weaponstr, string iconpath, string spritepath, Vector3 knockback, GameObject projectile)
+        public Weapon(string name, int id, string desc, int value, WeaponTypeDefines type, int weaponstr, string iconpath, string spritepath, int knockbackX, int knockbackY, string projectilepath)
         {
             ItemName = name;
             ItemId = id;
@@ -37,8 +37,8 @@ namespace Assets.Scripts.Inventory.ItemSpecific
             WeaponStrength = weaponstr;
             ItemIcon = Resources.Load<Sprite>(iconpath);
             WeaponSprite = Resources.Load<Sprite>(spritepath);
-            Knockback = knockback;
-            Projectile = projectile;
+            Knockback = new Vector3(knockbackX, knockbackY);
+            Projectile = (GameObject)Resources.Load(projectilepath);
         }
 
 	    public Weapon()

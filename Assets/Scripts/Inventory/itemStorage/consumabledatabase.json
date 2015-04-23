@@ -1,9 +1,11 @@
-{
-	"itemname": "",
-	"itemid": 1,
-	"itemdescription":"asdfsfd",
-	"itemvalue": 30,
-	"consumabletype": 1,
-	"appendvalue":40,
-	"icon": ""
-}
+[
+    {
+        "ItemName": "Large Health Potion",
+        "ItemId": 2,
+        "ItemDesc": "This flazk wil meak splelling gardulaly wsroe!",
+        "ItemValue": 1,
+        "ConsumableType": 0,
+        "AppendValue": 40,
+        "ItemIcon": "tileground"
+    }
+]
